@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: scroll 5s ease;
+}
+
+/* header */
+
+.header, .disable-auto-slide {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.navigation {
+    display: flex;
+    width: 70px;
+    gap: 1rem;
+}
+.navigation svg {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+    background: #121212;
+    color: #fff;
+    font-family: "Comic Neue", serif;
+}
+
+.container .carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    height: 400px;
+    overflow: auto;
+    display: flex;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border: 2px solid #fff;
+}
+.container .carousel-wrapper::-webkit-scrollbar { 
+    display: none;
+}
+
+.container .carousel-wrapper .load-blury-bg img {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.container .load-blury-bg {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.container .load-blury-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(54, 54, 54, 0.4);
+    transition: all 0.5s ease;
+}
+
+/* lazy load transition */
+.container .load-blury-bg>img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.container .load-blury-bg.loaded>img {
+    opacity: 1;
+}
+
+@media (max-width: 1400px) {
+    .container .carousel-wrapper {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container .carousel-wrapper {
+        max-width: 400px;
+    }
+}
