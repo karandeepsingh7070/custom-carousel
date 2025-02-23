@@ -12,3 +12,5 @@ This is a custom Carousel created using plain HTML, CSS, and JavaScript. It incl
 - **Lazy Load Images**: Images are loaded only when they are in the viewport.
 - **Infinite Scroll**: Includes a spring or bounce back effect for smooth infinite scrolling.
 - **True Infinite Scrolling - Supports in Experimental Carousel**: Renders 3 images at a time for a seamless infinite scrolling experience.
+
+## Link - https://eloquent-truffle-39813b.netlify.app/
