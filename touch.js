@@ -161,21 +161,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 });
             }
         })
-        // restricting scroll behiviour
-        // carouselWrapper?.addEventListener('scroll', (e) => {
-        //     if (!isScrollDisabled) {
-        //         var scrollLeft = carouselWrapper.scrollLeft
-        //         let remainingShift = Math.ceil(scrollLeft / 400)
-        //         // console.log(scrollLeft, remainingShift)
-        //         carouselWrapper.scrollLeft = (remainingShift * 400) - scrollCoardinate
-        //     }
-        // })
-
         carouselWrapper?.addEventListener('touchstart', startTouch)
         carouselWrapper?.addEventListener('touchmove', trackPosition)
         carouselWrapper?.addEventListener('touchcancel', endTouch)
         carouselWrapper?.addEventListener('touchend', endTouch)
         document.addEventListener('keydown', handleKeyDown);
+
+        carouselWrapper.addEventListener("wheel",(e) => e.preventDefault()); // disabling wheel scroll
 
         backNavigation.addEventListener('click', moveToLeft)
         nextNavigation.addEventListener('click', moveToRight)
